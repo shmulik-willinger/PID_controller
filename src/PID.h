@@ -2,24 +2,17 @@
 #define PID_H
 #include <vector>
 
-class PID {
+class PID 
+{
 public:
 
-   // Errors
 	double p_error;
 	double i_error;
 	double d_error;
-	double total_error;
-
-	// cross track error params
-	double cte_;
 	double cte_prev;
-	double cte_mem;
 
-	// Coefficients
+	double maxError, minError;
 	double Kp, Ki, Kd;
-	double mem_frac;
-	double v;
 
   /*
   * Constructor
@@ -45,11 +38,6 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
-
-  void AddToParameterAtIndex(int index, double amount);
-
-  void UpdateCoefficients(double alpha_p, double alpha_i, double alpha_d, double v);
-
 };
 
 #endif /* PID_H */

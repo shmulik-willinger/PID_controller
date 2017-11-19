@@ -30,8 +30,6 @@ std::string hasData(std::string s) {
   return "";
 }
 
-static double steering_prev = 0;
-
 int main()
 {
   uWS::Hub h;
@@ -39,9 +37,9 @@ int main()
   // Initialize the pid variable.
   PID pid;
 
-  double kp = 0.13;
+  double kp = 0.23;
   double ki = 0;
-  double kd = 3.2;
+  double kd = 3.0;
   pid.Init(kp, ki, kd);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
@@ -59,7 +57,7 @@ int main()
           double cte = std::stod(j[1]["cte"].get<std::string>());
           double speed = std::stod(j[1]["speed"].get<std::string>());
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
-          double steer_value;
+          double steer_value = 0.0;
           /*
           * TODO: Calcuate steering value here, remember the steering value is
           * [-1, 1].
@@ -68,18 +66,7 @@ int main()
           */
 
 		  pid.UpdateError(cte);
-		  steer_value = pid.TotalError();
-
-		  // Steering Control
-		  steer_value = 0.6 * steering_prev + 0.4* steer_value;
-		  steering_prev = steer_value;
-		  const double target_speed = 100;
-
-		  if (steer_value>1)
-			  steer_value = 1;
-		  else if (steer_value<-1) 
-			  steer_value = -1;
-
+		  steer_value = -pid.TotalError();
           
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
@@ -124,7 +111,7 @@ int main()
   });
 
   int port = 4567;
-  if (h.listen("127.0.0.1", port))
+  if (h.listen(port))
   {
     std::cout << "Listening to port " << port << std::endl;
   }
