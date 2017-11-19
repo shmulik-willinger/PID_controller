@@ -1,22 +1,39 @@
 #include "PID.h"
+#include <iostream>
+
 
 using namespace std;
-
-/*
-* TODO: Complete the PID class.
-*/
 
 PID::PID() {}
 
 PID::~PID() {}
 
-void PID::Init(double Kp, double Ki, double Kd) {
+#define WINDOW_SIZE 20
+
+void PID::Init(double Kp, double Ki, double Kd) 
+{
+	PID::Kp = Kp;
+	PID::Ki = Ki;
+	PID::Kd = Kd;
+
+	p_error = d_error = i_error = 0.0;
 }
 
-void PID::UpdateError(double cte) {
+void PID::UpdateError(double cte)
+{
+	cte_prev = cte_;
+	cte_ = cte;
+	cte_mem = mem_frac * cte_mem + cte_;
+
+	p_error = Kp* cte_;
+	i_error = Ki * cte_mem;
+	d_error = Kd* (cte_ - cte_prev);
+
+	return;
 }
 
-double PID::TotalError() {
-	return 0;
+double PID::TotalError() 
+{
+	return -Kp*p_error - Kd*d_error - Ki*i_error;
 }
 
