@@ -69,12 +69,14 @@ P controller               |  PD controller
 
 PI controller               |  PID controller
 :---------------------:|:---------------------:
-![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PI_controller.gif?raw=true)  |  ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_controller.gif?raw=true)
-
+![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PI_controller.gif?raw=true)  |  [![PID_controller](https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_controller.gif?raw=true)](https://youtu.be/HFe7bw9Tw0s)
 Its easy to see that the PID controller converges better than the others controllers.
 
 
 Process results
 ---
 
+Hyperparameters tuning: The track left very little room for errors since it's pretty narrow. I started with value of zero for each of the parameters - P,I,D to verify the car drive straight and the project is working as expected. The 'proportional' value was then increased slowly till I noticed the car starts overshooting and go out of the road. The value for 'integral' value was left with zero since it reflects the time delta, and we still don't have it when we start (each other value moved the car out of the road). The 'differential' purpose is to overcome the overshooting, and it tooks me time to figure it's best value without making the car to turn the opposite direction or fail to the lack.
+
+The final values where set to [Proportional: 0.13, Integral: 0.0, Differential: 3.1]   
 The vehicle successfully drive a lap around the track.
