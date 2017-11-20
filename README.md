@@ -59,9 +59,7 @@ Running the project:
 Simulation
 ---
 
-The following videos demonstrates the difference in performance when running the simulator against a controller that dosen't support ALL the PID components. I compiled the project to run every time with only part of the The component, and you can see below the results (Poor performance). The final PID controller implementation performed well, and the vehicle successfully drive a lap around the track.
-
-![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_converges.jpg?raw=true)
+The following videos demonstrates the difference in performance when running the simulator against a controller that dosen't support ALL the PID components. I compiled the project to run every time with only part of the The component, and you can see below the results (Poor performance). The final PID controller implementation performed well, and the vehicle successfully drive a lap around the track. Its easy to see that the PID controller converges better than the others controllers.
 
 P controller               |  PD controller
 :---------------------:|:---------------------:
@@ -70,8 +68,8 @@ P controller               |  PD controller
 PI controller               |  PID controller
 :---------------------:|:---------------------:
 ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PI_controller.gif?raw=true)  |  [![PID_controller](https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_controller.gif?raw=true)](https://youtu.be/HFe7bw9Tw0s)
-Its easy to see that the PID controller converges better than the others controllers.
 
+![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_converges.jpg?raw=true)
 
 Process results
 ---
