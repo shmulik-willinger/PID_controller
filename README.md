@@ -24,6 +24,7 @@ The `integral` component comes to compensate systematic bias. It tries to elimin
 The `differential` section helps to avoid the over-shooting, by smoothing the approach to it. As the car drives towards the CTE, the differential term goes smaller.
 
 ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/sample2.jpg?raw=true)
+
 (The image was taken from a video by AerospaceControlsLab)
 
 Prerequisites and Executing
@@ -58,19 +59,19 @@ Running the project:
 Simulation
 ---
 
-The following videos demonstrates the difference in performance when running the simulator against a controller that dosen't support ALL the PID components. The final PID controller implementation performed well, and the vehicle successfully drive a lap around the track.
+The following videos demonstrates the difference in performance when running the simulator against a controller that dosen't support ALL the PID components. I compiled the project to run every time with only part of the The component, and you can see below the results (Poor performance). The final PID controller implementation performed well, and the vehicle successfully drive a lap around the track.
 
 ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_converges.jpg?raw=true)
 
 P controller               |  PD controller
 :---------------------:|:---------------------:
-![]( https://github.com/shmulik-willinger/extended_kalman_filter/blob/master/readme_img/radar_only.jpg?raw=true)  |  ![]( https://github.com/shmulik-willinger/extended_kalman_filter/blob/master/readme_img/laser_only.jpg?raw=true)
+![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/P_controller.gif?raw=true)  |  ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PD_controller.gif?raw=true)
 
 PI controller               |  PID controller
 :---------------------:|:---------------------:
-![]( https://github.com/shmulik-willinger/extended_kalman_filter/blob/master/readme_img/radar_only_2.jpg?raw=true)  |  ![]( https://github.com/shmulik-willinger/extended_kalman_filter/blob/master/readme_img/laser_only_2.jpg?raw=true)
+![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PI_controller.gif?raw=true)  |  ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_controller.gif?raw=true)
 
-Its easy to see that the PID controller converges better than the others controllers. 
+Its easy to see that the PID controller converges better than the others controllers.
 
 
 Process results
