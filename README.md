@@ -74,7 +74,7 @@ PI controller               |  PID controller
 Hyperparameters
 ---
 
-Hyperparameters tuning have been made manualy. The track left very little room for errors since it's pretty narrow. I started with value of zero for each of the parameters - P,I,D to verify the car drive straight and the project is working as expected. The 'proportional' value was then increased slowly till I noticed the car starts overshooting and go out of the road. The value for 'integral' value was left with zero since it reflects the time delta, and we still don't have it when we start (each other value moved the car out of the road). The 'differential' purpose is to overcome the overshooting, and it tooks me time to figure it's best value without making the car to turn the opposite direction or fail to the lack.
+Hyperparameters tuning have been made manualy. The track left very little room for errors since it's pretty narrow. I started with value of zero for each of the parameters - P,I,D to verify the car drive straight and the project is working as expected. The 'proportional' value was then increased slowly till I noticed the car can drive around the first corner without overshooting and go out of the road. The value for 'integral' value was left with zero since it reflects the time delta, and we still don't have it when we start (each other value moved the car out of the road). The 'differential' purpose is to overcome the overshooting, and it tooks me time to figure it's best value without making the car to turn the opposite direction or fail to the lack. Finally I set its value to 3.1, after verifying the car can handle the 2 sharp corners in the track without going out of the lines.  
 
 Project specifications (Rubric sections)
 ---
