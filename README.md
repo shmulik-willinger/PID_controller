@@ -71,10 +71,21 @@ PI controller               |  PID controller
 
 ![]( https://github.com/shmulik-willinger/PID_controller/blob/master/readme_img/PID_converges.jpg?raw=true)
 
-Process results
+Hyperparameters
 ---
 
-Hyperparameters tuning: The track left very little room for errors since it's pretty narrow. I started with value of zero for each of the parameters - P,I,D to verify the car drive straight and the project is working as expected. The 'proportional' value was then increased slowly till I noticed the car starts overshooting and go out of the road. The value for 'integral' value was left with zero since it reflects the time delta, and we still don't have it when we start (each other value moved the car out of the road). The 'differential' purpose is to overcome the overshooting, and it tooks me time to figure it's best value without making the car to turn the opposite direction or fail to the lack.
+Hyperparameters tuning have been made manualy. The track left very little room for errors since it's pretty narrow. I started with value of zero for each of the parameters - P,I,D to verify the car drive straight and the project is working as expected. The 'proportional' value was then increased slowly till I noticed the car starts overshooting and go out of the road. The value for 'integral' value was left with zero since it reflects the time delta, and we still don't have it when we start (each other value moved the car out of the road). The 'differential' purpose is to overcome the overshooting, and it tooks me time to figure it's best value without making the car to turn the opposite direction or fail to the lack.
 
+Project specifications (Rubric sections)
+---
+1. The project can be compiled without errors with cmake and make as descrived in the 'Executing' section.
+2. The PID procedure follows what was taught in the lessons.
+3. The effect of the P, I, D components of the PID algorithm was describe in the 'PID controller' section.
+4. The hyperparameters were tuned manualy as describe above.
+5. Some video samples with discription and Comparison were presented.
+6. The vehicle successfully drive a lap around the track.
+
+Process results
+---
 The final values where set to [Proportional: 0.13, Integral: 0.0, Differential: 3.1]   
-The vehicle successfully drive a lap around the track.
+The vehicle successfully drive a lap around the track. No tire leave the drivable portion of the track surface.
